@@ -7,5 +7,6 @@ services:
     environment:
       - HTTP_PROXY_HOST=${HTTP_PROXY_HOST}
       - HTTP_PROXY_PORT=${HTTP_PROXY_PORT}
+      - HTTP_PROXY_PREFIX=${HTTP_PROXY_PREFIX}
       - TARGET_SERVER_URL=${TARGET_SERVER_URL}
     restart: always
