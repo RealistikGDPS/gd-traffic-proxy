@@ -1,0 +1,11 @@
+version: "3"
+services:
+  gd_traffic_proxy:
+    image: gd_traffic_proxy
+    ports:
+      - "${HTTP_PROXY_PORT}:${HTTP_PROXY_PORT}"
+    environment:
+      - HTTP_PROXY_HOST=${HTTP_PROXY_HOST}
+      - HTTP_PROXY_PORT=${HTTP_PROXY_PORT}
+      - TARGET_SERVER_URL=${TARGET_SERVER_URL}
+    restart: always
