@@ -16,8 +16,9 @@ install(console=console)
 async def handle(request: web.Request) -> web.Response:
     if not request.path.startswith(settings.HTTP_PROXY_PREFIX):
         return web.Response(status=404)
+    
     data = await request.post()
-    path = request.path.removeprefix(settings.HTTP_PROXY_PREFIX)
+    path = request.path.removeprefix(settings.HTTP_PROXY_PREFIX).removeprefix("/")
 
     target_url = f"{settings.TARGET_SERVER_URL}/{path}"
 
