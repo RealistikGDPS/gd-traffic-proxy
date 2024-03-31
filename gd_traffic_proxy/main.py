@@ -44,7 +44,6 @@ async def handle(request: web.Request) -> web.Response:
 
             return web.Response(
                 status=resp.status,
-                headers=resp.headers,
                 text=await resp.text(),
             )
 
